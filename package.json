@@ -1,0 +1,23 @@
+{
+  "name": "equalizer",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://dzianachayeuskaya.github.io/equalizer-final/",
+  "source": "index.html",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "parcel": "^2.11.0",
+    "redom": "^4.0.0"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.1"
+  }
+}
