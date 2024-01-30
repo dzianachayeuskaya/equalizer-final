@@ -6,7 +6,7 @@
   "source": "index.html",
   "scripts": {
     "start": "parcel",
-    "build": "parcel build",
+    "build": "parcel build index.html --public-url /equalizer-final",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
