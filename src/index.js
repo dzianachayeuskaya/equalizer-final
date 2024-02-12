@@ -37,11 +37,11 @@ function createAudioEl(file) {
   const bufferLength = analyser.frequencyBinCount;
   const dataArray = new Uint8Array(bufferLength);
 
-  audioEl.addEventListener('play', renderFrame);
+  audioEl.addEventListener('play', requestAnimationFrame(renderFrame));
 
   function renderFrame() {
-    if (!audioEl.paused) {
-      requestAnimationFrame(renderFrame);
+    if (audioEl.paused) {
+      return;
     }
     analyser.getByteFrequencyData(dataArray);
     const gridCells = document.querySelectorAll('.grid-element');
@@ -58,6 +58,8 @@ function createAudioEl(file) {
         gridCells[ind + i].style.backgroundColor = 'red';
       });
     }
+
+    requestAnimationFrame(renderFrame);
   }
 
   return audioEl;
